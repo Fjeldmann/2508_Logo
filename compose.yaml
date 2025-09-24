@@ -10,7 +10,7 @@ services:
       - TZ=Etc/UTC
     volumes:
       - ./workspace:/config/workspace
-      - ./fonts:/config/.fonts 
+      - ./fonts:/config/.config/inkscape/fonts
     ports:
       - 3000:3000
       - 3001:3001
