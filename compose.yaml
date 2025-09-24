@@ -1,0 +1,18 @@
+# https://docs.linuxserver.io/images/docker-inkscape/#docker-compose-recommended-click-here-for-more-info
+---
+services:
+  inkscape:
+    image: lscr.io/linuxserver/inkscape:latest
+    container_name: inkscape
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./workspace:/config/workspace
+      - ./fonts:/config/.fonts 
+    ports:
+      - 3000:3000
+      - 3001:3001
+    shm_size: "1gb"
+    restart: unless-stopped
